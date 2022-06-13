@@ -6,7 +6,7 @@ ARG TARGETOS
 ARG TARGETARCH
 ENV TARGETARCH_STR=$TARGETARCH
 RUN if [ "$TARGETARCH" = "arm64" ]; then \
-    export TARGETARCH_STR=aarch64 ;
+    export TARGETARCH_STR=aarch64; \
     fi
 ENV JAVA_HOME=/opt/java
 RUN apt-get update && apt-get install -y wget tini \
