@@ -1,0 +1,18 @@
+FROM ubuntu:jammy
+ARG GRAALVM_JAVA_VERSION=java17
+ARG GRAALVM_VERSION=22.1.0
+ARG REPOSITORY=https://github.com/graalvm/graalvm-ce-builds/releases/download
+ARG TARGETOS
+ARG TARGETARCH
+ENV JAVA_HOME /opt/java
+RUN apt-get update && apt-get install -y wget tini \
+    && wget ${REPOSITORY}/vm-${GRAALVM_VERSION}/graalvm-ce-${GRAALVM_JAVA_VERSION}-${TARGETOS}-${TARGETARCH}-${GRAALVM_VERSION}.tar.gz \
+    && tar -xzf graalvm-ce-${GRAALVM_JAVA_VERSION}-${TARGETOS}-${TARGETARCH}-${GRAALVM_VERSION}.tar.gz \
+    && rm graalvm-ce-${GRAALVM_JAVA_VERSION}-${TARGETOS}-${TARGETARCH}-${GRAALVM_VERSION}.tar.gz \
+    && mv graalvm-ce-${GRAALVM_JAVA_VERSION}-${GRAALVM_VERSION} $JAVA_HOME \
+    && apt-get clean
+ENV PATH=$JAVA_HOME/bin:$PATH
+RUN gu install native-image
+ENTRYPOINT [ "/tini", "--", "java" ]
+CMD [ "--version" ]
+
