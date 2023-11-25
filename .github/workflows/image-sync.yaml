@@ -1,4 +1,4 @@
-name: sync images to docker.io
+name: sync images
 
 on:
   workflow_dispatch:
