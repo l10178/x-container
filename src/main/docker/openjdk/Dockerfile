@@ -16,5 +16,5 @@ EOF
 ENV JAVA_HOME=${SDKMAN_DIR}/candidates/java/${GRAALVM_VERSION}
 ENV PATH=$JAVA_HOME/bin:$PATH
 
-ENTRYPOINT [ "/usr/bin/tini","--" ]
-CMD [ "java","--version" ]
+ENTRYPOINT ["/usr/bin/tini","--"]
+CMD ["java"]
