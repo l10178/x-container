@@ -1,5 +1,8 @@
 FROM debian:stable-slim
 WORKDIR /opt
+# Ensure apt-get won't prompt for selecting options
+ENV DEBIAN_FRONTEND=noninteractive
+
 ENV SDKMAN_DIR=/opt/sdkman
 RUN <<EOF
 #!/usr/bin/env bash
