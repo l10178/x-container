@@ -1,1 +1,2 @@
 ghcr.io/backstage/backstage:latest: docker.io/nxest/backstage
+gcr.io/kaniko-project/executor:v1.18.0,v1.18.0-debug,latest,debug: docker.io/nxest/kaniko-project-executor
