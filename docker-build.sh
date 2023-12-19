@@ -21,6 +21,7 @@ APP_CONTEXT_PATH=${DOCKER_SRC}/base
 
 
 # buildx  --no-cache  --platform linux/amd64 --push
+# --build-arg HTTP_PROXY= --build-arg HTTPS_PROXY=
 docker build --no-cache -t ${APP_DOCKER_TAG} -f ${APP_DOCKER_FILE} ${APP_CONTEXT_PATH}
 
 APP_DOCKER_FILE=${DOCKER_SRC}/openjdk/Dockerfile
