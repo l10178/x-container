@@ -44,9 +44,9 @@ jobs:
           # change the version
 
           docker buildx build \
-            --build-arg OAUTH2_PROXY_TAG=${OAUTH2_PROXY_TAG}
+            --build-arg OAUTH2_PROXY_TAG=${OAUTH2_PROXY_TAG} \
+            src/main/docker/oauth2-proxy-auto-sign-in \
             --tag nxest/oauth2-proxy-auto-sign-in:${OAUTH2_PROXY_TAG} \
             --tag nxest/oauth2-proxy-auto-sign-in:lastest \
             --platform linux/amd64,linux/arm64 \
-            src/main/docker/oauth2-proxy-auto-sign-in \
             --push
