@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-if [ -z "$OAUTH2_PROXY_CUSTOM_TEMPLATES_DIR" ] || [ -z "$NXEST_CUSTOM_TEMPLATES_DIR" ]; then
+if [ -z "$OAUTH2_PROXY_CUSTOM_TEMPLATES_DIR" ] && [ -z "$NXEST_CUSTOM_TEMPLATES_DIR" ]; then
   echo "Error: Env OAUTH2_PROXY_CUSTOM_TEMPLATES_DIR or NXEST_CUSTOM_TEMPLATES_DIR is not set."
   exit 1
 fi
