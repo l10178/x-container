@@ -9,7 +9,7 @@ on:
   # pull_request:
 
 env:
-  OAUTH2_PROXY_TAG: v7.7.1
+  OAUTH2_PROXY_TAG: v7.7.2
 
 jobs:
   push:

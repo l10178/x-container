@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Redirecting</title>
     <script> 
-        window.location = "{{.ProxyPrefix}}/start?rd=" + encodeURI(window.location)
+        window.location.href = "{{.ProxyPrefix}}/start?rd=" + encodeURI(window.location)
     </script>
   </head>
   <body>
